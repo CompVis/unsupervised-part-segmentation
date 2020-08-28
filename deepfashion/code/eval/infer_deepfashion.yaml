@@ -1,0 +1,30 @@
+iterator: nips19.eval.infer.Evaluator
+triplet_path: triplet_checkpoints/deepfashion/triplet_reid.ckpt-99000
+
+dataset: nips19.eval.infer.InferData
+data_root: data/deepfashion
+data_row_csv: data/deepfashion/eval_test_46.csv
+
+batch_size: 9
+#n_data_processes: 2
+eval_forever: True
+eval_all: True
+
+spatial_size: 128
+header_key: view0
+value_keys: [view0_mask_rgb]
+
+
+
+infer_logits_hook_options:
+  view0_key : view0
+  view0_mask_rgb_key : mask0_complete
+  part_logit_key : view0_part
+
+plot_batches: False
+
+
+hooks:
+  outputs : True
+  logits_1D : False
+

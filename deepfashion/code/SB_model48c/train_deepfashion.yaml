@@ -1,0 +1,160 @@
+model: nips19.SB_model48c.model.TrainModel
+iterator: nips19.SB_model48c.model.Trainer
+
+
+dataset: eddata.stochastic_pair.StochasticPairs
+data_root: data/deepfashion
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_avoid_identity: False
+data_flip_h: True
+data_flip_v: False
+data_rotate: False
+data_csv_columns : ["character_id", "relative_file_path_"]
+data_csv_has_header : True
+
+
+batch_size: 8
+spatial_size: 128
+
+
+lr: 2.0e-4
+lr_decay_begin: 500000
+lr_decay_end:   500001
+log_freq:     250
+ckpt_freq:   20000
+num_steps:  500000
+
+
+kl_weight:
+  start: 0
+  end: 1
+  start_value: 1.0
+  end_value:   1.0
+
+
+mumford_sha_alpha:
+  var_type: staircase
+  options:
+    start:        65000
+    start_value:  1.0
+    step_size:    10000
+    stair_factor: 10
+    clip_min:     1.0e-2
+    clip_max:     1.0e-2
+
+
+MI:
+  mi_target: 2.0
+  mi_slack:  0.5
+  loa_init:  0.0
+  loa_lr:    4.0
+  loa_adaptive: True
+  lor_init:  0.0
+  lor_lr:    0.05
+  lor_min:   0.0
+  lor_max:   7.5
+  lor_adaptive: True
+
+
+mumford_sha_lambda:
+  var_type: staircase
+  options:
+    start:        65000
+    start_value:  1.0
+    step_size:    5000
+    stair_factor: 10
+    clip_min:     1.0
+    clip_max:     1.0
+
+
+variance_weight:
+  var_type: staircase
+  options:
+    start:        41000
+    start_value:  1
+    step_size:    40000
+    stair_factor: 10
+    clip_min:     1.0e+0
+    clip_max:     1.0e+5
+
+
+prior_gmrf_weight:
+  var_type: staircase
+  options:
+    start:        100000
+    start_value:  1.0e-2
+    step_size:    20000
+    stair_factor: 3.14
+    clip_min:     1.0e-3
+    clip_max:     1.0e-3
+
+
+prior_mumford_sha_weight:
+  var_type: staircase
+  options:
+    start:        100000
+    start_value:  1.0e-2
+    step_size:    20000
+    stair_factor: 3.14
+    clip_min:     1.0e-6
+    clip_max:     1.0e-6
+
+
+weakly_superv_loss_weight_p:
+  var_type: staircase
+  options:
+    start:        41000
+    start_value:  1
+    step_size:    1
+    stair_factor: 1.0e+3
+    clip_min:     1.0e+0
+    clip_max:     1.0e+3
+
+
+test_mode: False
+
+n_parts : 25
+
+
+restore_exclude : []
+
+
+z0_size : 256 # pi encoding length, has to be size divisible by n_parts
+local_app_size : 64
+
+
+encoder0:
+  config : [32, 64, 128, 128, 256, 256]
+  extra_resnets : 4
+  activation : "leaky_relu"
+  coords: True
+
+final_hour:
+  config : [32, 64]
+  extra_resnets : 0
+  upsample_method: "linear" # TODO: linear or subpixel?
+  activation: "leaky_relu"
+  coords: False
+
+encoder1 :
+  config : [32, 64, 128, 128, 256, 256]
+  extra_resnets : 4
+  activation: "leaky_relu"
+  coords: False
+
+dv:
+  config : [16, 32, 32, 128, 128, 256]
+  upsample_config: ["linear", "linear", "linear", "linear", "linear"]
+  activation: "leaky_relu"
+  coords: True
+
+d_single:
+  config : [16, 32, 32, 128, 128, 256]
+  upsample_config: ["linear", "linear", "linear", "linear", "linear"]
+  activation: "leaky_relu"
+  coords: True
+
+
+discriminator :
+  activation : "leaky_relu"
+  coords: False

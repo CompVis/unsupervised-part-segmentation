@@ -1,0 +1,52 @@
+iterator: nips19.eval.eval_03.eval_03.Evaluator
+
+
+dataset: nips19.eval.eval_03.eval_03.InferData
+data_root: data/deepfashion
+data_csv:  data/deepfashion/eval_03_csv/deepfashion_1k.csv
+fetch_output_keys: ["external_app_features", "external_mask_ids", "all_image_parts"]  # which outputs to fetch
+batch_input_keys:  ["view0"]  # which items from data batches to feed as inputs to model
+batch_store_keys:  ["gt_segmentation"] # which items from data batches to store but not use as model inputs
+
+img_keys: ["decoding_mask4", "view0"]
+
+
+batch_size:  16
+n_processes: 4
+eval_forever: True
+eval_all: True
+
+spatial_size: 128
+
+num_clusters: 2
+n_vis: 400
+
+build_external_mask_encoding_graph: True
+
+
+dp_semantic_remap_dict : {
+    "arm" : ['left_upper_arm',
+             'right_upper_arm',
+             'left_upper_arm',
+             'right_upper_arm',
+             'left_lower_arm',
+             'right_lower_arm',
+             'left_lower_arm',
+             'right_lower_arm'
+            ],
+    "leg" : [
+        'back_upper_front_leg',
+        'back_upper_left_leg',
+        'right_upper_leg',
+        'left_upper_leg',
+        'back_right_lower_leg',
+        'back_left_lower_leg',
+        'right_lower_leg',
+        'left_lower_leg'
+    ],
+    'head': ['left_head', 'right_head'],
+    'hand': ['right_hand', 'left_hand'],
+    'upper_body': ['chest', "back"],
+    'foot': ['left_foot', 'right_foot'],
+    'background' : ['background']
+}

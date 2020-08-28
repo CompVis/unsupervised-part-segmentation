@@ -1,0 +1,48 @@
+iterator: nips19.eval.eval_01.eval_01.Evaluator
+
+
+dataset: nips19.eval.eval_01.eval_01.InferData
+data_root: data/deepfashion
+data_csv:  data/deepfashion/eval_01_csv/deepfashion.csv
+fetch_output_keys: ["out_parts_hard", "generated", "out_parts_soft", "m00_sample", "part_generated"]  # which outputs to
+batch_input_keys:  ["view0",]  # which items from data batches to feed as inputs to model
+batch_store_keys:  ["gt_segmentation"] # which items from data batches to store but not use as model inputs
+
+
+batch_size:  8
+n_processes: 4
+eval_forever: True
+eval_all: True
+
+
+spatial_size: 128
+n_inferred_parts : 10
+
+
+
+dp_semantic_remap_dict : {
+    "arm" : ['left_upper_arm',
+             'right_upper_arm',
+             'left_upper_arm',
+             'right_upper_arm',
+             'left_lower_arm',
+             'right_lower_arm',
+             'left_lower_arm',
+             'right_lower_arm'
+            ],
+    "leg" : [
+        'back_upper_front_leg',
+        'back_upper_left_leg',
+        'right_upper_leg',
+        'left_upper_leg',
+        'back_right_lower_leg',
+        'back_left_lower_leg',
+        'right_lower_leg',
+        'left_lower_leg'
+    ],
+    'head': ['left_head', 'right_head'],
+    'hand': ['right_hand', 'left_hand'],
+    'upper_body': ['chest', "back"],
+    'foot': ['left_foot', 'right_foot'],
+    'background' : ['background']
+}

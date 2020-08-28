@@ -1,0 +1,25 @@
+model: nips19.SB_model28b.model.TrainModel
+iterator: nips19.final_eval.eval.Evaluator
+triplet_path: triplet_checkpoints/deepfashion/triplet_reid.ckpt-99000
+
+dataset: nips19.final_eval.eval.MatrixData
+data_root: data/exercise_data/exercise_dataset
+#data_row_csv: data/exercise_data/eval_test_50.csv
+#data_col_csv: data/exercise_data/eval_test_50.csv
+data_row_csv: data/exercise_data/eval_cherries.csv
+data_col_csv: data/exercise_data/eval_cherries.csv
+
+batch_size: 7
+n_data_processes: 2
+eval_forever: False
+eval_all: True
+
+spatial_size: 256
+generated_key: t_generated
+vis0_key: generated
+vis1_key: t_mask
+transpose: True
+
+
+conditional_transfer:
+  t_list: [1, 0, 0, 0, 0, 0]

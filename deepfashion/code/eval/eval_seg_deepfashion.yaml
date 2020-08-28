@@ -1,0 +1,18 @@
+iterator: nips19.eval.eval_segmentation.Evaluator
+
+dataset: nips19.eval.eval_segmentation.InferData
+data_root: data/deepfashion
+data_train_csv: data/deepfashion/foo.csv
+data_test_csv:  data/deepfashion/foo.csv
+fetch_output_keys: ["out_parts_hard"] # which outputs to
+batch_input_keys: ["view0", "view1"]  # which items from data batches to feed as inputs to model
+batch_store_keys: ["gt_segmentation"] # which items from data batches to store but not use as model inputs
+
+
+batch_size: 1
+n_processes: 1
+eval_forever: True
+eval_all: True
+
+spatial_size: 128
+plot_batches: False

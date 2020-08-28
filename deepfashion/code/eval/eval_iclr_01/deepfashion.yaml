@@ -1,0 +1,58 @@
+iterator: nips19.eval.eval_iclr_01.eval_01.Evaluator
+
+
+dataset: nips19.eval.eval_iclr_01.eval_01.InferData
+data_root: data/deepfashion
+data_csv: data/deepfashion/denseposed_csvs/denseposed_filted_up_test.csv
+data_csv_columns : ["character_id", "relative_file_path_", "relative_iuv_path_"]
+data_csv_has_header : True
+
+fetch_output_keys: ["out_parts_hard", "generated", "out_parts_soft", "m0_sample"]  # which outputs to
+batch_input_keys:  ["view0"]  # which items from data batches to feed as inputs to model
+batch_store_keys:  ["gt_segmentation"] # which items from data batches to store but not use as model inputs
+
+
+#max_n_examples : 64
+batch_size:  64
+#n_processes: 4
+eval_forever: True
+eval_all: True
+n_inferred_parts: 10
+spatial_size: 128
+
+dp_semantic_remap_dict : {
+    "arms" : ['left_upper_arm',
+             'right_upper_arm',
+             'left_upper_arm',
+             'right_upper_arm',
+             'left_lower_arm',
+             'right_lower_arm',
+             'left_lower_arm',
+             'right_lower_arm',
+             'right_hand',
+             'left_hand'
+            ],
+    "legs" : [
+        'back_upper_front_leg',
+        'back_upper_left_leg',
+        'right_upper_leg',
+        'left_upper_leg',
+        'back_right_lower_leg',
+        'back_left_lower_leg',
+        'right_lower_leg',
+        'left_lower_leg',
+    ],
+    'head': ['left_head', 'right_head'],
+    'feet': ['left_foot', 'right_foot'],
+    'torso': ['chest', "back"],
+    'background' : ['background']
+}
+
+
+figure01_options: {
+  inferred_segmentation_key : "out_parts_hard", # from above
+  sampled_mask_key : "m0_sample", # from above
+  input_view_key: "view0",
+  generated_image_key: "generated",
+  gt_segmentation_key: "gt_segmentation"
+}

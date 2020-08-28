@@ -1,0 +1,5063 @@
+[INFO] [main]: Namespace(base=None, checkpoint=None, eval=None, log_level='info', name='SB_model48c_deepfashion', nogpu=False, project=None, retrain=False, train='nips19/SB_model48c/train_deepfashion.yaml')
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: Training config: nips19/SB_model48c/train_deepfashion.yaml
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+dataset: eddata.stochastic_pair.StochasticPairs
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt---max_n_examples', eval=['nips19/eval/eval_iclr_01/deepfashion.yaml'], log_level='info', name=None, nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/eval/eval_iclr_01/deepfashion.yaml
+nips19/eval/eval_iclr_01/deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 146, in _iterate
+    self.run_hooks(ep, before=True)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 237, in run_hooks
+    hook.before_epoch(index)
+  File "/export/home/sabraun/code/edflow/edflow/hooks/checkpoint_hooks/tf_checkpoint_hook.py", line 381, in before_epoch
+    self(checkpoint)
+  File "/export/home/sabraun/code/edflow/edflow/hooks/checkpoint_hooks/tf_checkpoint_hook.py", line 73, in __call__
+    self.saver.restore(self.session, checkpoint)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1268, in restore
+    + compat.as_text(save_path))
+ValueError: The passed save_path is not a valid checkpoint: logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt---max_n_examples
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint=None, eval=['nips19/eval/eval_iclr_01/deepfashion.yaml'], log_level='info', name=None, nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: Evaluation config: nips19/eval/eval_iclr_01/deepfashion.yaml
+nips19/eval/eval_iclr_01/deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1334, in _do_call
+    return fn(*args)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1319, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1407, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape[25,64,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node map/TensorArrayStack/TensorArrayGatherV3}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[{{node decoder_delta/conv2d_7/add}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 160, in _iterate
+    results = self.run(fetches, feed_dict=feeds)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 14, in run
+    results = self.session.run(fetches, feed_dict=feed_dict)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 929, in run
+    run_metadata_ptr)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1152, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1328, in _do_run
+    run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1348, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape[25,64,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node map/TensorArrayStack/TensorArrayGatherV3 (defined at /export/home/sabraun/code/nips19/nips19/SB_model48c/model.py:219) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[node decoder_delta/conv2d_7/add (defined at /export/home/sabraun/code/nips19/nips19/nn.py:657) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+
+Caused by op 'map/TensorArrayStack/TensorArrayGatherV3', defined at:
+  File "/export/home/sabraun/anaconda3/envs/nips19/bin/edflow", line 7, in <module>
+    exec(compile(f.read(), __file__, 'exec'))
+  File "/export/home/sabraun/code/edflow/edflow/edflow", line 280, in <module>
+    main(opt, additional_kwargs)
+  File "/export/home/sabraun/code/edflow/edflow/edflow", line 178, in main
+    p.start()
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/multiprocessing/context.py", line 212, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/multiprocessing/context.py", line 267, in _Popen
+    return Popen(process_obj)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/multiprocessing/popen_fork.py", line 74, in _launch
+    code = process_obj._bootstrap()
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/multiprocessing/process.py", line 252, in _bootstrap
+    self.run()
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 86, in test
+    traceable_process(_test, args, job_queue, idx)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 429, in define_graph
+    injected_mask0 = unpool_features(local_app_features1, self.decoding_mask)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 219, in unpool_features
+    output = tf.map_fn(lambda x: x[0] * x[1], elems, dtype=tf.float32)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/functional_ops.py", line 498, in map_fn
+    results_flat = [r.stack() for r in r_a]
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/functional_ops.py", line 498, in <listcomp>
+    results_flat = [r.stack() for r in r_a]
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 1128, in stack
+    return self._implementation.stack(name=name)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 292, in stack
+    return self.gather(math_ops.range(0, self.size()), name=name)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 306, in gather
+    element_shape=element_shape)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/gen_data_flow_ops.py", line 6291, in tensor_array_gather_v3
+    element_shape=element_shape, name=name)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 788, in _apply_op_helper
+    op_def=op_def)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 507, in new_func
+    return func(*args, **kwargs)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3300, in create_op
+    op_def=op_def)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1801, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[25,64,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node map/TensorArrayStack/TensorArrayGatherV3 (defined at /export/home/sabraun/code/nips19/nips19/SB_model48c/model.py:219) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[node decoder_delta/conv2d_7/add (defined at /export/home/sabraun/code/nips19/nips19/nn.py:657) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint=None, eval=['nips19/eval/eval_iclr_01/deepfashion.yaml'], log_level='info', name=None, nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: Evaluation config: nips19/eval/eval_iclr_01/deepfashion.yaml
+nips19/eval/eval_iclr_01/deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-220000', eval=['nips19/eval/eval_iclr_01/deepfashion.yaml'], log_level='info', name=None, nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/eval/eval_iclr_01/deepfashion.yaml
+nips19/eval/eval_iclr_01/deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-220000', eval=['nips19/eval/eval_iclr_01/deepfashion.yaml'], log_level='info', name=None, nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/eval/eval_iclr_01/deepfashion.yaml
+nips19/eval/eval_iclr_01/deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfers', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 178, in _test
+    dataset = implementations["dataset"](config=config)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 61, in __init__
+    self.make_labels()
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 73, in make_labels
+    labels_df = pd.read_csv(self.csv)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/pandas/io/parsers.py", line 702, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/pandas/io/parsers.py", line 429, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/pandas/io/parsers.py", line 895, in __init__
+    self._make_engine(self.engine)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/pandas/io/parsers.py", line 1122, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/pandas/io/parsers.py", line 1853, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 387, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 705, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File b'data/pennaction/csvs/filted_up_test.csv' does not exist: b'data/pennaction/csvs/filted_up_test.csv'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfers', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 526, in define_graph
+    if self.config.get("keep_list", False):
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 271, in make_part_transfer
+    a_features = tf.concat([a_features] * self.batch_size, axis=0)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 271, in make_part_transfer
+    a_features = tf.concat([a_features] * self.batch_size, axis=0)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 66, in dispatch_line
+    self.user_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/pdb.py", line 259, in user_line
+    self.interaction(frame, None)
+  File "/export/home/sabraun/code/edflow/edflow/fpdb.py", line 13, in interaction
+    sys.stdin = os.fdopen(0)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/os.py", line 1074, in fdopen
+    return io.open(fd, *args, **kwargs)
+OSError: [Errno 9] Bad file descriptor
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfers', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 527, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 270, in make_part_transfer
+    a_features = nn.take_only_first_item_in_the_batch(self.local_app_features1) # [1, P, F]
+  File "/export/home/sabraun/code/nips19/nips19/nn.py", line 2197, in take_only_first_item_in_the_batch
+    def take_only_first_item_in_the_batch(x):
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 50, in trace_dispatch
+    return self.dispatch_call(frame, arg)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 82, in dispatch_call
+    self.user_call(frame, arg)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/pdb.py", line 249, in user_call
+    self.interaction(frame, None)
+  File "/export/home/sabraun/code/edflow/edflow/fpdb.py", line 13, in interaction
+    sys.stdin = os.fdopen(0)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/os.py", line 1074, in fdopen
+    return io.open(fd, *args, **kwargs)
+OSError: [Errno 9] Bad file descriptor
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfers', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 527, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 271, in make_part_transfer
+    a_features = tf.concat([a_features] * self.batch_size, axis=0)
+AttributeError: 'TrainModel' object has no attribute 'batch_size'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfers', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 180, in after_epoch
+    make_figure_1(self.data, self.root, self.config, global_step)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 186, in make_figure_1
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+KeyError: 'out_parts_hard'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arm', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 180, in after_epoch
+    make_figure_1(self.data, self.root, self.config, global_step)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 186, in make_figure_1
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+KeyError: 'out_parts_hard'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_hips', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1864, in _create_c_op
+    c_op = c_api.TF_FinishOperation(op_desc)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shape must be rank 1 but is rank 0 for 'ReverseV2_2' (op: 'ReverseV2') with input shapes: [25,16,64], [].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 529, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 275, in make_part_transfer
+    b_features = tf.reverse(b_features, axis=1)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/gen_array_ops.py", line 8218, in reverse_v2
+    "ReverseV2", tensor=tensor, axis=axis, name=name)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 788, in _apply_op_helper
+    op_def=op_def)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 507, in new_func
+    return func(*args, **kwargs)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3616, in create_op
+    op_def=op_def)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 2027, in __init__
+    control_input_ops)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1867, in _create_c_op
+    raise ValueError(str(e))
+ValueError: Shape must be rank 1 but is rank 0 for 'ReverseV2_2' (op: 'ReverseV2') with input shapes: [25,16,64], [].
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_hips', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1356, in _do_call
+    return fn(*args)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1341, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1429, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted: OOM when allocating tensor with shape[400,128,128,32] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node encoder_1_2/conv2d_0/add-1-0-TransposeNCHWToNHWC-LayoutOptimizer}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[decoder_delta/conv2d_7/add/_503]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted: OOM when allocating tensor with shape[400,128,128,32] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node encoder_1_2/conv2d_0/add-1-0-TransposeNCHWToNHWC-LayoutOptimizer}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 160, in _iterate
+    results = self.run(fetches, feed_dict=feeds)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 14, in run
+    results = self.session.run(fetches, feed_dict=feed_dict)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 950, in run
+    run_metadata_ptr)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1173, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1350, in _do_run
+    run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1370, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted: OOM when allocating tensor with shape[400,128,128,32] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node encoder_1_2/conv2d_0/add-1-0-TransposeNCHWToNHWC-LayoutOptimizer}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[decoder_delta/conv2d_7/add/_503]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted: OOM when allocating tensor with shape[400,128,128,32] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node encoder_1_2/conv2d_0/add-1-0-TransposeNCHWToNHWC-LayoutOptimizer}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored.
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_hips', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 180, in after_epoch
+    make_figure_1(self.data, self.root, self.config, global_step)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 186, in make_figure_1
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+KeyError: 'out_parts_hard'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_hips', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 180, in after_epoch
+    make_figure_1(self.data, self.root, self.config, global_step)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 186, in make_figure_1
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+KeyError: 'out_parts_hard'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_hips_legs', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 180, in after_epoch
+    make_figure_1(self.data, self.root, self.config, global_step)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 186, in make_figure_1
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+KeyError: 'out_parts_hard'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 180, in after_epoch
+    make_figure_1(self.data, self.root, self.config, global_step)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 186, in make_figure_1
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+KeyError: 'out_parts_hard'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_hips', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 180, in after_epoch
+    make_figure_1(self.data, self.root, self.config, global_step)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 186, in make_figure_1
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+KeyError: 'out_parts_hard'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_hips_legs', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 180, in after_epoch
+    make_figure_1(self.data, self.root, self.config, global_step)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 186, in make_figure_1
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+KeyError: 'out_parts_hard'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 180, in after_epoch
+    make_figure_1(self.data, self.root, self.config, global_step)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 186, in make_figure_1
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+KeyError: 'out_parts_hard'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_hips', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_hips_legs', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1864, in _create_c_op
+    c_op = c_api.TF_FinishOperation(op_desc)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shape must be rank 1 but is rank 0 for 'Tile' (op: 'Tile') with input shapes: [16,25,64], [].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 541, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, self.batch_size)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/gen_array_ops.py", line 10903, in tile
+    "Tile", input=input, multiples=multiples, name=name)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 788, in _apply_op_helper
+    op_def=op_def)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 507, in new_func
+    return func(*args, **kwargs)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3616, in create_op
+    op_def=op_def)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 2027, in __init__
+    control_input_ops)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1867, in _create_c_op
+    raise ValueError(str(e))
+ValueError: Shape must be rank 1 but is rank 0 for 'Tile' (op: 'Tile') with input shapes: [16,25,64], [].
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 541, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, self.batch_size)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, self.batch_size)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 66, in dispatch_line
+    self.user_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/pdb.py", line 259, in user_line
+    self.interaction(frame, None)
+  File "/export/home/sabraun/code/edflow/edflow/fpdb.py", line 13, in interaction
+    sys.stdin = os.fdopen(0)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/os.py", line 1074, in fdopen
+    return io.open(fd, *args, **kwargs)
+OSError: [Errno 9] Bad file descriptor
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 541, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, self.batch_size)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, self.batch_size)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 66, in dispatch_line
+    self.user_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/pdb.py", line 259, in user_line
+    self.interaction(frame, None)
+  File "/export/home/sabraun/code/edflow/edflow/fpdb.py", line 13, in interaction
+    sys.stdin = os.fdopen(0)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/os.py", line 1074, in fdopen
+    return io.open(fd, *args, **kwargs)
+OSError: [Errno 9] Bad file descriptor
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 541, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 271, in make_part_transfer
+    a_features = self.local_app_features1 # [B, P, F]
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 271, in make_part_transfer
+    a_features = self.local_app_features1 # [B, P, F]
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 541, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, self.batch_size)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, self.batch_size)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 66, in dispatch_line
+    self.user_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/pdb.py", line 259, in user_line
+    self.interaction(frame, None)
+  File "/export/home/sabraun/code/edflow/edflow/fpdb.py", line 13, in interaction
+    sys.stdin = os.fdopen(0)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/os.py", line 1074, in fdopen
+    return io.open(fd, *args, **kwargs)
+OSError: [Errno 9] Bad file descriptor
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 541, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, [self.batch_size, 1, 1])
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, [self.batch_size, 1, 1])
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 66, in dispatch_line
+    self.user_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/pdb.py", line 259, in user_line
+    self.interaction(frame, None)
+  File "/export/home/sabraun/code/edflow/edflow/fpdb.py", line 13, in interaction
+    sys.stdin = os.fdopen(0)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/os.py", line 1074, in fdopen
+    return io.open(fd, *args, **kwargs)
+OSError: [Errno 9] Bad file descriptor
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 541, in define_graph
+    self.make_part_transfer()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, [self.batch_size, 1, 1])
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 272, in make_part_transfer
+    a_features = tf.tile(a_features, [self.batch_size, 1, 1])
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 66, in dispatch_line
+    self.user_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/pdb.py", line 259, in user_line
+    self.interaction(frame, None)
+  File "/export/home/sabraun/code/edflow/edflow/fpdb.py", line 13, in interaction
+    sys.stdin = os.fdopen(0)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/os.py", line 1074, in fdopen
+    return io.open(fd, *args, **kwargs)
+OSError: [Errno 9] Bad file descriptor
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 541, in define_graph
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 271, in make_part_transfer
+    a_features = tf.tile(a_features, [self.batch_size, 1, 1])
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 271, in make_part_transfer
+    a_features = tf.tile(a_features, [self.batch_size, 1, 1])
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 533, in define_graph
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 289, in make_part_transfer
+  File "/export/home/sabraun/code/nips19/nips19/SB_model48c/model.py", line 289, in make_part_transfer
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_chest', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_chest', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_chest', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_head', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_arms_legs', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/latentparts2/bin/edflow -b Deepfashion/config01_deepfashion.yaml -p logs/paper/deepfashion/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: root: logs/paper/deepfashion/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu4
+[INFO] [run]: tmux: $0:@0.%1
+[INFO] [run]: pid: 18961
+[INFO] [run]: pgid: 18961
+[INFO] [run]: Project structure:
+logs/paper/deepfashion/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lon_adaptive: false
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.05
+  mi_target: 1.0
+alpha_size: 64
+batch_size: 4
+channels_first: false
+ckpt_freq: 20000
+dataset: latentparts2.datasets.DeepfashionTrainDataset
+discriminator:
+  activation: leaky_relu
+  coords: false
+dm:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config: linear
+encoder_alpha:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+encoder_pi:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+hard_m: true
+integrations:
+  tensorboardX:
+    active: true
+    handlers:
+    - scalars
+  wandb:
+    active: false
+    handlers:
+    - scalars
+    - images
+iterator: Deepfashion.exp01.Iterator
+lambda_auto_rec: 24
+lambda_entropy:
+  clip_max: 0.06
+  clip_min: 6.0e-05
+  end: 50000
+  end_value: 0.06
+  start: 30000
+  start_value: 6.0e-05
+lambda_gmrf_kl: 0.001
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 100000
+lr_decay_end: 100001
+model: Deepfashion.exp01.Model
+n_parts: 25
+num_steps: 100000
+pi_size: 256
+size: 128
+stochastic_l: true
+stochastic_pi: true
+validation_dataset: latentparts2.datasets.DeepfashionTestDataset
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/latentparts2/bin/edflow -b Deepfashion/config01_deepfashion.yaml -p logs/paper/deepfashion/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: root: logs/paper/deepfashion/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu4
+[INFO] [run]: tmux: $0:@0.%1
+[INFO] [run]: pid: 19579
+[INFO] [run]: pgid: 19579
+[INFO] [run]: cuda_devices: 0
+[INFO] [run]: Project structure:
+logs/paper/deepfashion/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lon_adaptive: false
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.05
+  mi_target: 1.0
+alpha_size: 64
+batch_size: 4
+channels_first: false
+ckpt_freq: 20000
+dataset: latentparts2.datasets.DeepfashionTrainDataset
+discriminator:
+  activation: leaky_relu
+  coords: false
+dm:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config: linear
+encoder_alpha:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+encoder_pi:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+hard_m: true
+integrations:
+  tensorboardX:
+    active: true
+    handlers:
+    - scalars
+  wandb:
+    active: false
+    handlers:
+    - scalars
+    - images
+iterator: Deepfashion.exp01.Iterator
+lambda_auto_rec: 24
+lambda_entropy:
+  clip_max: 0.06
+  clip_min: 6.0e-05
+  end: 50000
+  end_value: 0.06
+  start: 30000
+  start_value: 6.0e-05
+lambda_gmrf_kl: 0.001
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 100000
+lr_decay_end: 100001
+model: Deepfashion.exp01.Model
+n_parts: 25
+num_steps: 100000
+pi_size: 256
+size: 128
+stochastic_l: true
+stochastic_pi: true
+validation_dataset: latentparts2.datasets.DeepfashionTestDataset
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/latentparts2/bin/edflow -b Deepfashion/config01_deepfashion.yaml -p logs/paper/deepfashion/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: root: logs/paper/deepfashion/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu4
+[INFO] [run]: tmux: $0:@0.%1
+[INFO] [run]: pid: 23801
+[INFO] [run]: pgid: 23801
+[INFO] [run]: cuda_devices: 0
+[INFO] [run]: Project structure:
+logs/paper/deepfashion/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lon_adaptive: false
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.05
+  mi_target: 1.0
+alpha_size: 64
+batch_size: 4
+channels_first: false
+ckpt_freq: 20000
+dataset: latentparts2.datasets.DeepfashionTrainDataset
+discriminator:
+  activation: leaky_relu
+  coords: false
+dm:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config: linear
+encoder_alpha:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+encoder_pi:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+hard_m: true
+integrations:
+  tensorboardX:
+    active: true
+    handlers:
+    - scalars
+  wandb:
+    active: false
+    handlers:
+    - scalars
+    - images
+iterator: Deepfashion.exp01.Iterator
+lambda_auto_rec: 24
+lambda_entropy:
+  clip_max: 0.06
+  clip_min: 6.0e-05
+  end: 50000
+  end_value: 0.06
+  start: 30000
+  start_value: 6.0e-05
+lambda_gmrf_kl: 0.001
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 100000
+lr_decay_end: 100001
+model: Deepfashion.exp01.Model
+n_parts: 25
+num_steps: 100000
+pi_size: 256
+size: 128
+stochastic_l: true
+stochastic_pi: true
+validation_dataset: latentparts2.datasets.DeepfashionTestDataset
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/nips19/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] --max_n_examples 500
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 3446
+[INFO] [run]: pgid: 3446
+[INFO] [run]: cuda_devices: 2
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+dataset: eddata.stochastic_pair.StochasticPairs
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 500
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/nips19/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] --max_n_examples 500
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 10612
+[INFO] [run]: pgid: 10612
+[INFO] [run]: cuda_devices: 2
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+dataset: eddata.stochastic_pair.StochasticPairs
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 500
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/nips19/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] --max_n_examples 500
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 11678
+[INFO] [run]: pgid: 11678
+[INFO] [run]: cuda_devices: 2
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+dataset: eddata.stochastic_pair.StochasticPairs
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 500
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/nips19/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] --max_n_examples 500
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 12019
+[INFO] [run]: pgid: 12019
+[INFO] [run]: cuda_devices: 2
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+dataset: eddata.stochastic_pair.StochasticPairs
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 500
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/nips19/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] --max_n_examples 500
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 13103
+[INFO] [run]: pgid: 13103
+[INFO] [run]: cuda_devices: 2
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+dataset: eddata.stochastic_pair.StochasticPairs
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 500
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/nips19/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] --max_n_examples 500
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 15432
+[INFO] [run]: pgid: 15432
+[INFO] [run]: cuda_devices: 2
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+dataset: eddata.stochastic_pair.StochasticPairs
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 500
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/nips19/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] --max_n_examples 500
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 16435
+[INFO] [run]: pgid: 16435
+[INFO] [run]: cuda_devices: 2
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+dataset: eddata.stochastic_pair.StochasticPairs
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 500
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/nips19/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] --max_n_examples 500
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 18099
+[INFO] [run]: pgid: 18099
+[INFO] [run]: cuda_devices: 2
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 500
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/nips19/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] --max_n_examples 500
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 18365
+[INFO] [run]: pgid: 18365
+[INFO] [run]: cuda_devices: 2
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 8
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+datasets:
+  train: nips19.eval.infer.InferData
+  validation: nips19.eval.infer.InferData
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 500
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 21, in <module>
+    from nips19.eval import utils
+  File "/export/data/sabraun/code/nips19/nips19/eval/utils.py", line 5, in <module>
+    from supermariopy import imageutils
+ModuleNotFoundError: No module named 'supermariopy'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 26, in <module>
+    from eval import utils
+ModuleNotFoundError: No module named 'eval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 29, in <module>
+    import utils
+ModuleNotFoundError: No module named 'utils'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 31, in <module>
+    raise ImportError
+ImportError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 174, in _test
+    config, ["model", "iterator", "dataset"]
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in get_implementations_from_config
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in <genexpr>
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 28, in get_impl
+    return getattr(importlib.import_module(module, package=None), cls)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 33, in <module>
+    raise ImportError
+ImportError
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 21, in <module>
+    from nips19.eval import utils
+  File "/export/data/sabraun/code/nips19/nips19/eval/utils.py", line 5, in <module>
+    from supermariopy import imageutils
+  File "/export/home/sabraun/code/supermariopy/supermariopy/imageutils.py", line 8, in <module>
+    import deprecation
+ModuleNotFoundError: No module named 'deprecation'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 26, in <module>
+    from eval import utils
+ModuleNotFoundError: No module named 'eval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 29, in <module>
+    import utils
+ModuleNotFoundError: No module named 'utils'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 31, in <module>
+    raise ImportError
+ImportError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 174, in _test
+    config, ["model", "iterator", "dataset"]
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in get_implementations_from_config
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in <genexpr>
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 28, in get_impl
+    return getattr(importlib.import_module(module, package=None), cls)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 33, in <module>
+    raise ImportError
+ImportError
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 21, in <module>
+    from nips19.eval import utils
+  File "/export/data/sabraun/code/nips19/nips19/eval/utils.py", line 5, in <module>
+    from supermariopy import imageutils
+  File "/export/home/sabraun/code/supermariopy/supermariopy/imageutils.py", line 8, in <module>
+    import deprecation
+ModuleNotFoundError: No module named 'deprecation'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 26, in <module>
+    from eval import utils
+ModuleNotFoundError: No module named 'eval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 29, in <module>
+    import utils
+ModuleNotFoundError: No module named 'utils'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 31, in <module>
+    raise ImportError
+ImportError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 174, in _test
+    config, ["model", "iterator", "dataset"]
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in get_implementations_from_config
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in <genexpr>
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 28, in get_impl
+    return getattr(importlib.import_module(module, package=None), cls)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 33, in <module>
+    raise ImportError
+ImportError
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 21, in <module>
+    from nips19.eval import utils
+  File "/export/data/sabraun/code/nips19/nips19/eval/utils.py", line 5, in <module>
+    from supermariopy import imageutils
+  File "/export/home/sabraun/code/supermariopy/supermariopy/imageutils.py", line 8, in <module>
+    import deprecation
+ModuleNotFoundError: No module named 'deprecation'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 26, in <module>
+    from eval import utils
+ModuleNotFoundError: No module named 'eval'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 29, in <module>
+    import utils
+ModuleNotFoundError: No module named 'utils'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 31, in <module>
+    raise ImportError
+ImportError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 174, in _test
+    config, ["model", "iterator", "dataset"]
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in get_implementations_from_config
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in <genexpr>
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 28, in get_impl
+    return getattr(importlib.import_module(module, package=None), cls)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 33, in <module>
+    raise ImportError
+ImportError
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 174, in _test
+    config, ["model", "iterator", "dataset"]
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in get_implementations_from_config
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 32, in <genexpr>
+    implementations = dict((name, get_impl(config, name)) for name in names)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 28, in get_impl
+    return getattr(importlib.import_module(module, package=None), cls)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 48, in <module>
+    from tabulate import tabulate
+ModuleNotFoundError: No module named 'tabulate'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 177, in _test
+    dataset = implementations["dataset"](config=config)
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 61, in __init__
+    self.make_labels()
+  File "/export/data/sabraun/code/nips19/nips19/eval/infer.py", line 73, in make_labels
+    labels_df = pd.read_csv(self.csv)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/pandas/io/parsers.py", line 702, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/pandas/io/parsers.py", line 429, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/pandas/io/parsers.py", line 895, in __init__
+    self._make_engine(self.engine)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/pandas/io/parsers.py", line 1122, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/pandas/io/parsers.py", line 1853, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 387, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 705, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File b'data/deepfashion/csvs/shuffled_filted_up_test.csv' does not exist: b'data/deepfashion/csvs/shuffled_filted_up_test.csv'
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1356, in _do_call
+    return fn(*args)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1341, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1429, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted: OOM when allocating tensor with shape[256,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node map_2/while/mul}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[Reshape_5/_497]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted: OOM when allocating tensor with shape[256,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node map_2/while/mul}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 224, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/model_iterator.py", line 160, in _iterate
+    results = self.run(fetches, feed_dict=feeds)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/tf_iterator.py", line 14, in run
+    results = self.session.run(fetches, feed_dict=feed_dict)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 950, in run
+    run_metadata_ptr)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1173, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1350, in _do_run
+    run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1370, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted: OOM when allocating tensor with shape[256,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node map_2/while/mul (defined at /data/sabraun/code/nips19/nips19/SB_model48c/model.py:219) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[Reshape_5/_497]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted: OOM when allocating tensor with shape[256,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node map_2/while/mul (defined at /data/sabraun/code/nips19/nips19/SB_model48c/model.py:219) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored.
+
+Original stack trace for 'map_2/while/mul':
+  File "/home/sabraun/anaconda3/envs/nips19/bin/edflow", line 7, in <module>
+    exec(compile(f.read(), __file__, 'exec'))
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/edflow", line 272, in <module>
+    main(opt, additional_kwargs)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/edflow", line 174, in main
+    p.start()
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/context.py", line 223, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/popen_fork.py", line 74, in _launch
+    code = process_obj._bootstrap()
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 86, in test
+    traceable_process(_test, args, job_queue, idx)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 193, in _test
+    Model = implementations["model"](config)
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 533, in define_graph
+    self.make_part_transfer()
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 281, in make_part_transfer
+    injected_mask0 = unpool_features(transferred_features, tf.tile(self.decoding_mask, [self.batch_size, 1, 1, 1]))
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 219, in unpool_features
+    output = tf.map_fn(lambda x: x[0] * x[1], elems, dtype=tf.float32)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/map_fn.py", line 268, in map_fn
+    maximum_iterations=n)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py", line 3501, in while_loop
+    return_same_structure)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py", line 3012, in BuildLoop
+    pred, body, original_loop_vars, loop_vars, shape_invariants)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py", line 2937, in _BuildLoop
+    body_result = body(*packed_vars_for_body)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/control_flow_ops.py", line 3456, in <lambda>
+    body = lambda i, lv: (i + 1, orig_body(*lv))
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/map_fn.py", line 257, in compute
+    packed_fn_values = fn(packed_values)
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 219, in <lambda>
+    output = tf.map_fn(lambda x: x[0] * x[1], elems, dtype=tf.float32)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py", line 884, in binary_op_wrapper
+    return func(x, y, name=name)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py", line 1180, in _mul_dispatch
+    return gen_math_ops.mul(x, y, name=name)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/gen_math_ops.py", line 6490, in mul
+    "Mul", x=x, y=y, name=name)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py", line 788, in _apply_op_helper
+    op_def=op_def)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py", line 507, in new_func
+    return func(*args, **kwargs)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 3616, in create_op
+    op_def=op_def)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 2005, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1356, in _do_call
+    return fn(*args)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1341, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1429, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted: OOM when allocating tensor with shape[25,64,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node map_2/TensorArrayStack/TensorArrayGatherV3}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[Reshape_5/_497]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted: OOM when allocating tensor with shape[25,64,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node map_2/TensorArrayStack/TensorArrayGatherV3}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 224, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/model_iterator.py", line 160, in _iterate
+    results = self.run(fetches, feed_dict=feeds)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/tf_iterator.py", line 14, in run
+    results = self.session.run(fetches, feed_dict=feed_dict)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 950, in run
+    run_metadata_ptr)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1173, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1350, in _do_run
+    run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1370, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted: OOM when allocating tensor with shape[25,64,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node map_2/TensorArrayStack/TensorArrayGatherV3 (defined at /data/sabraun/code/nips19/nips19/SB_model48c/model.py:219) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[Reshape_5/_497]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted: OOM when allocating tensor with shape[25,64,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node map_2/TensorArrayStack/TensorArrayGatherV3 (defined at /data/sabraun/code/nips19/nips19/SB_model48c/model.py:219) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored.
+
+Original stack trace for 'map_2/TensorArrayStack/TensorArrayGatherV3':
+  File "/home/sabraun/anaconda3/envs/nips19/bin/edflow", line 7, in <module>
+    exec(compile(f.read(), __file__, 'exec'))
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/edflow", line 272, in <module>
+    main(opt, additional_kwargs)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/edflow", line 174, in main
+    p.start()
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/context.py", line 223, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/popen_fork.py", line 74, in _launch
+    code = process_obj._bootstrap()
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 86, in test
+    traceable_process(_test, args, job_queue, idx)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 193, in _test
+    Model = implementations["model"](config)
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 533, in define_graph
+    self.make_part_transfer()
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 281, in make_part_transfer
+    injected_mask0 = unpool_features(transferred_features, tf.tile(self.decoding_mask, [self.batch_size, 1, 1, 1]))
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 219, in unpool_features
+    output = tf.map_fn(lambda x: x[0] * x[1], elems, dtype=tf.float32)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/map_fn.py", line 269, in map_fn
+    results_flat = [r.stack() for r in r_a]
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/map_fn.py", line 269, in <listcomp>
+    results_flat = [r.stack() for r in r_a]
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 1205, in stack
+    return self._implementation.stack(name=name)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 309, in stack
+    return self.gather(math_ops.range(0, self.size()), name=name)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 323, in gather
+    element_shape=element_shape)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/gen_data_flow_ops.py", line 6705, in tensor_array_gather_v3
+    element_shape=element_shape, name=name)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py", line 788, in _apply_op_helper
+    op_def=op_def)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py", line 507, in new_func
+    return func(*args, **kwargs)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 3616, in create_op
+    op_def=op_def)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 2005, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1356, in _do_call
+    return fn(*args)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1341, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1429, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted: OOM when allocating tensor with shape[25,81,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node map_2/TensorArrayStack/TensorArrayGatherV3}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[Reshape_5/_497]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted: OOM when allocating tensor with shape[25,81,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node map_2/TensorArrayStack/TensorArrayGatherV3}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 224, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/model_iterator.py", line 160, in _iterate
+    results = self.run(fetches, feed_dict=feeds)
+  File "/export/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/iterators/tf_iterator.py", line 14, in run
+    results = self.session.run(fetches, feed_dict=feed_dict)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 950, in run
+    run_metadata_ptr)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1173, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1350, in _do_run
+    run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1370, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted: OOM when allocating tensor with shape[25,81,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node map_2/TensorArrayStack/TensorArrayGatherV3 (defined at /data/sabraun/code/nips19/nips19/SB_model48c/model.py:219) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[Reshape_5/_497]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted: OOM when allocating tensor with shape[25,81,128,128,64] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node map_2/TensorArrayStack/TensorArrayGatherV3 (defined at /data/sabraun/code/nips19/nips19/SB_model48c/model.py:219) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored.
+
+Original stack trace for 'map_2/TensorArrayStack/TensorArrayGatherV3':
+  File "/home/sabraun/anaconda3/envs/nips19/bin/edflow", line 7, in <module>
+    exec(compile(f.read(), __file__, 'exec'))
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/edflow", line 272, in <module>
+    main(opt, additional_kwargs)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/edflow", line 174, in main
+    p.start()
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/context.py", line 223, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/popen_fork.py", line 74, in _launch
+    code = process_obj._bootstrap()
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 86, in test
+    traceable_process(_test, args, job_queue, idx)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/home/sabraun/projects/2020_gcpr_latentparts/edflow_2_0/edflow/main.py", line 193, in _test
+    Model = implementations["model"](config)
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 248, in __init__
+    self.define_graph()
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 533, in define_graph
+    self.make_part_transfer()
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 281, in make_part_transfer
+    injected_mask0 = unpool_features(transferred_features, tf.tile(self.decoding_mask, [self.batch_size, 1, 1, 1]))
+  File "/data/sabraun/code/nips19/nips19/SB_model48c/model.py", line 219, in unpool_features
+    output = tf.map_fn(lambda x: x[0] * x[1], elems, dtype=tf.float32)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/map_fn.py", line 269, in map_fn
+    results_flat = [r.stack() for r in r_a]
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/map_fn.py", line 269, in <listcomp>
+    results_flat = [r.stack() for r in r_a]
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 1205, in stack
+    return self._implementation.stack(name=name)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 309, in stack
+    return self.gather(math_ops.range(0, self.size()), name=name)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 323, in gather
+    element_shape=element_shape)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/ops/gen_data_flow_ops.py", line 6705, in tensor_array_gather_v3
+    element_shape=element_shape, name=name)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py", line 788, in _apply_op_helper
+    op_def=op_def)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py", line 507, in new_func
+    return func(*args, **kwargs)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 3616, in create_op
+    op_def=op_def)
+  File "/home/sabraun/anaconda3/envs/nips19/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 2005, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [run]: /export/home/sabraun/anaconda3/envs/vunet/bin/edflow -b nips19/SB_model48c/train_deepfashion.yaml -e nips19/SB_model48c/infer_transfer_deepfashion.yaml -p logs/2019-09-30T17:33:41_SB_model48c_deepfashion -c logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000 -n transfer_all_pck --keep_list [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] --data_csv data/deepfashion/csvs/shuffled_filted_up_test.csv --max_n_examples 1000 --batch_size 4
+[INFO] [run]: root: logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+[INFO] [run]: hostname: compgpu6
+[INFO] [run]: tmux: $0:@0.%4
+[INFO] [run]: pid: 49846
+[INFO] [run]: pgid: 49846
+[INFO] [run]: cuda_devices: 6
+[INFO] [run]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config:
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: 0.0
+  mi_slack: 0.5
+  mi_target: 2.0
+batch_size: 4
+ckpt_freq: 20000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_avoid_identity: false
+data_csv: data/deepfashion/csvs/shuffled_filted_up_test.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+data_csv_has_header: true
+data_flip_h: true
+data_flip_v: false
+data_root: data/deepfashion
+data_rotate: false
+dataset: eddata.stochastic_pair.StochasticPairs
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+eval_all: false
+eval_forever: false
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+iterator: nips19.SB_model48c.model.Trainer
+keep_list:
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 500000
+lr_decay_end: 500001
+max_n_examples: 1000
+model: nips19.SB_model48c.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 500000
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-06
+    clip_min: 1.0e-06
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+variance_weight:
+  options:
+    clip_max: 100000.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 41000
+    start_value: 1
+    step_size: 40000
+  var_type: staircase
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1000.0
+    clip_min: 1.0
+    stair_factor: 1000.0
+    start: 41000
+    start_value: 1
+    step_size: 1
+  var_type: staircase
+z0_size: 256
+
+[INFO] [main]: Namespace(base=['nips19/SB_model48c/train_deepfashion.yaml'], checkpoint='logs/2019-09-30T17:33:41_SB_model48c_deepfashion/train/checkpoints/model.ckpt-80000', eval=['nips19/SB_model48c/infer_transfer_deepfashion.yaml'], log_level='info', name='transfer_all_pck', nogpu=False, project='logs/2019-09-30T17:33:41_SB_model48c_deepfashion', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-09-30T17:33:41_SB_model48c_deepfashion
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48c/infer_transfer_deepfashion.yaml
+nips19/SB_model48c/infer_transfer_deepfashion.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished

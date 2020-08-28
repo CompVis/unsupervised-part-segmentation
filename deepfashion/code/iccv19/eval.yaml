@@ -1,0 +1,18 @@
+model: nips19.iccv19.model.TrainModel
+iterator: nips19.iccv19.eval.Evaluator
+triplet_path: triplet_checkpoints/deepfashion/triplet_reid.ckpt-99000
+
+dataset: iccv.comparison_matrices.eval.MatrixData
+data_root: data/deepfashion
+data_row_csv: nips19/iccv19/example_rows.csv
+data_col_csv: nips19/iccv19/example_rows.csv
+
+batch_size: 16
+n_data_processes: 2
+eval_forever: False
+eval_all: True
+
+spatial_size: 256
+generated_key: _generated
+vis0_key: _visualize
+vis1_key: _app_visualize

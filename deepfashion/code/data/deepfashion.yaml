@@ -1,0 +1,5 @@
+dataset: nips19.data.data.StochasticPairs
+data_root: data/deepfashion
+data_csv: data/deepfashion/filtered_train.csv
+data_avoid_identity: False
+data_flip: True
