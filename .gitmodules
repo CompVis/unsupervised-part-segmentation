@@ -4,3 +4,6 @@
 [submodule "baselines/unsupervised-disentangling"]
 	path = baselines/unsupervised-disentangling
 	url = git@github.com:theRealSuperMario/unsupervised-disentangling.git
+[submodule "baselines/lmdis-rep"]
+	path = baselines/lmdis-rep
+	url = git@github.com:theRealSuperMario/lmdis-rep.git
