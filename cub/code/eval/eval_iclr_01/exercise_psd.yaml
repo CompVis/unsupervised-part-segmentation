@@ -1,0 +1,30 @@
+iterator: nips19.eval.eval_iclr_01.eval_psd.Evaluator
+
+
+dataset: nips19.eval.eval_iclr_01.eval_psd.InferData
+data_root: data/psd_segmentation_data/converted
+data_csv: data/psd_segmentation_data/data.csv
+data_csv_columns : ["character_id", "relative_file_path_", "relative_iuv_path_"]
+data_csv_has_header : True
+
+fetch_output_keys: ["out_parts_hard", "generated", "out_parts_soft", "m0_sample"]  # which outputs to
+batch_input_keys:  ["view0"]  # which items from data batches to feed as inputs to model
+batch_store_keys:  ["gt_segmentation"] # which items from data batches to store but not use as model inputs
+
+
+#max_n_examples : 64
+batch_size:  30
+#n_processes: 4
+eval_forever: True
+eval_all: True
+n_inferred_parts: 25
+spatial_size: 128
+
+
+figure01_options: {
+  inferred_segmentation_key : "out_parts_hard", # from above
+  sampled_mask_key : "m0_sample", # from above
+  input_view_key: "view0",
+  generated_image_key: "generated",
+  gt_segmentation_key: "gt_segmentation"
+}

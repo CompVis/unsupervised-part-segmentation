@@ -1,0 +1,10 @@
+dataset: eddata.stochastic_pair.StochasticPairs
+data_root: data/deepfashion
+data_csv: data/deepfashion/csvs/filted_up_train.csv
+
+data_avoid_identity: False
+data_flip_h: True
+data_flip_v: False
+data_rotate: False
+data_csv_columns : ["character_id", "relative_file_path_"]
+data_csv_has_header : True

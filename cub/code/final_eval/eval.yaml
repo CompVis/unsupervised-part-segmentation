@@ -1,0 +1,18 @@
+model: nips19.SB_model21a.model.TrainModel
+iterator: nips19.final_eval.eval.Evaluator
+triplet_path: triplet_checkpoints/deepfashion/triplet_reid.ckpt-99000
+
+dataset: nips19.final_eval.eval.MatrixData
+data_root: data/deepfashion
+data_row_csv: nips19/final_eval/small_deepfashion_example_rows.csv
+data_col_csv: nips19/final_eval/small_deepfashion_example_rows.csv
+
+batch_size: 5
+n_data_processes: 2
+eval_forever: False
+eval_all: True
+
+spatial_size: 256
+generated_key: _generated
+vis0_key: view0_part0
+vis1_key: view1_part0

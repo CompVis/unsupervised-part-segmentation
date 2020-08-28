@@ -1,0 +1,1507 @@
+[INFO] [main]: Namespace(base=None, checkpoint=None, eval=None, log_level='info', name='SB_model_48i_cubsubset_tps', nogpu=False, project=None, retrain=False, train='nips19/SB_model48i/train_cub_subset_tps.yaml')
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: Training config: nips19/SB_model48i/train_cub_subset_tps.yaml
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: -3.0
+  mi_slack: 0.05
+  mi_target: 0.1
+adversarial_regularization: true
+batch_size: 8
+ckpt_freq: 10000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_augment_appearance: false
+data_augment_shape: false
+data_avoid_identity: false
+data_csv: data/cub_subset_dominik/birds/regress/train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+- foo
+- category
+data_csv_has_header: true
+data_flip_h: false
+data_flip_v: false
+data_root: data/cub_subset_dominik/birds/regress
+data_rotate: false
+dataset: src.data.data.AugmentedPair2
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+entropy_func: entropy
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+gamma: 10
+iterator: nips19.SB_model48i.model.Trainer
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 1000000
+lr_decay_end: 1000001
+model: nips19.SB_model48i.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 1000000
+patch_loss_weight:
+  options:
+    clip_max: 0.0001
+    clip_min: 0.0001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+patch_size: 32
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-05
+    clip_min: 1.0e-05
+    stair_factor: 10
+    start: 81000
+    start_value: 1.0
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+tps_parameters:
+  augm_scal: 1.0
+  off_scal: 0.2
+  rot_scal: 0.2
+  scal: 0.8
+  scal_var: 0.1
+  tps_scal: 0.15
+use_tps: true
+variance_weight:
+  options:
+    clip_max: 1
+    clip_min: 1
+    stair_factor: 2
+    start: 31000
+    start_value: 50
+    step_size: 30000
+  var_type: staircase
+variational_regularization: true
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    end: 80000
+    end_value: 1000.0
+    start: 60000
+    start_value: 1
+  var_type: linear
+z0_size: 256
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=None, checkpoint=None, eval=None, log_level='info', name=None, nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/', retrain=False, train='nips19/SB_model48i/train_cub_subset_tps.yaml')
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: Training config: nips19/SB_model48i/train_cub_subset_tps.yaml
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: -3.0
+  mi_slack: 0.05
+  mi_target: 1.0
+adversarial_regularization: true
+batch_size: 8
+ckpt_freq: 10000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_augment_appearance: false
+data_augment_shape: false
+data_avoid_identity: false
+data_csv: data/cub_subset_dominik/birds/regress/train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+- foo
+- category
+data_csv_has_header: true
+data_flip_h: false
+data_flip_v: false
+data_root: data/cub_subset_dominik/birds/regress
+data_rotate: false
+dataset: src.data.data.AugmentedPair2
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+entropy_func: entropy
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+gamma: 10
+iterator: nips19.SB_model48i.model.Trainer
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 1000000
+lr_decay_end: 1000001
+model: nips19.SB_model48i.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 1000000
+patch_loss_weight:
+  options:
+    clip_max: 0.0001
+    clip_min: 0.0001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+patch_size: 32
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-05
+    clip_min: 1.0e-05
+    stair_factor: 10
+    start: 81000
+    start_value: 1.0
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+tps_parameters:
+  augm_scal: 1.0
+  off_scal: 0.2
+  rot_scal: 0.2
+  scal: 0.8
+  scal_var: 0.1
+  tps_scal: 0.15
+use_tps: true
+variance_weight:
+  options:
+    clip_max: 1
+    clip_min: 1
+    stair_factor: 2
+    start: 31000
+    start_value: 50
+    step_size: 30000
+  var_type: staircase
+variational_regularization: true
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    end: 80000
+    end_value: 1000.0
+    start: 60000
+    start_value: 1
+  var_type: linear
+z0_size: 256
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=None, checkpoint=None, eval=None, log_level='info', name=None, nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/', retrain=False, train='nips19/SB_model48i/train_cub_subset_tps.yaml')
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: Training config: nips19/SB_model48i/train_cub_subset_tps.yaml
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: -3.0
+  mi_slack: 0.05
+  mi_target: 1.0
+adversarial_regularization: true
+batch_size: 8
+ckpt_freq: 10000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_augment_appearance: true
+data_augment_shape: false
+data_avoid_identity: false
+data_csv: data/cub_subset_dominik/birds/regress/train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+- foo
+- category
+data_csv_has_header: true
+data_flip_h: false
+data_flip_v: false
+data_root: data/cub_subset_dominik/birds/regress
+data_rotate: false
+dataset: src.data.data.AugmentedPair2
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+entropy_func: entropy
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+gamma: 10
+iterator: nips19.SB_model48i.model.Trainer
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 1000000
+lr_decay_end: 1000001
+model: nips19.SB_model48i.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 1000000
+patch_loss_weight:
+  options:
+    clip_max: 0.0001
+    clip_min: 0.0001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+patch_size: 32
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-05
+    clip_min: 1.0e-05
+    stair_factor: 10
+    start: 81000
+    start_value: 1.0
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+tps_parameters:
+  augm_scal: 1.0
+  off_scal: 0.2
+  rot_scal: 0.05
+  scal: 0.95
+  scal_var: 0.05
+  tps_scal: 0.08
+use_tps: true
+variance_weight:
+  options:
+    clip_max: 1
+    clip_min: 1
+    stair_factor: 2
+    start: 31000
+    start_value: 50
+    step_size: 30000
+  var_type: staircase
+variational_regularization: true
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    end: 80000
+    end_value: 1000.0
+    start: 60000
+    start_value: 1
+  var_type: linear
+z0_size: 256
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=None, checkpoint=None, eval=None, log_level='info', name=None, nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/', retrain=False, train='nips19/SB_model48i/train_cub_subset_tps.yaml')
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: Training config: nips19/SB_model48i/train_cub_subset_tps.yaml
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: -3.0
+  mi_slack: 0.05
+  mi_target: 1.0
+adversarial_regularization: true
+batch_size: 8
+ckpt_freq: 10000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_augment_appearance: true
+data_augment_shape: false
+data_avoid_identity: false
+data_csv: data/cub_subset_dominik/birds/regress/train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+- foo
+- category
+data_csv_has_header: true
+data_flip_h: false
+data_flip_v: false
+data_root: data/cub_subset_dominik/birds/regress
+data_rotate: false
+dataset: src.data.data.AugmentedPair2
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+entropy_func: entropy
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+gamma: 10
+iterator: nips19.SB_model48i.model.Trainer
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 1000000
+lr_decay_end: 1000001
+model: nips19.SB_model48i.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 1000000
+patch_loss_weight:
+  options:
+    clip_max: 0.0001
+    clip_min: 0.0001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+patch_size: 32
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-05
+    clip_min: 1.0e-05
+    stair_factor: 10
+    start: 81000
+    start_value: 1.0
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+tps_parameters:
+  augm_scal: 1.0
+  off_scal: 0.2
+  rot_scal: 0.1
+  scal: 0.9
+  scal_var: 0.05
+  tps_scal: 0.15
+use_tps: true
+variance_weight:
+  options:
+    clip_max: 1
+    clip_min: 1
+    stair_factor: 2
+    start: 31000
+    start_value: 50
+    step_size: 30000
+  var_type: staircase
+variational_regularization: true
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    end: 80000
+    end_value: 1000.0
+    start: 60000
+    start_value: 1
+  var_type: linear
+z0_size: 256
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=None, checkpoint=None, eval=None, log_level='info', name=None, nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/', retrain=False, train='nips19/SB_model48i/train_cub_subset_tps.yaml')
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: Training config: nips19/SB_model48i/train_cub_subset_tps.yaml
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: -3.0
+  mi_slack: 0.05
+  mi_target: 1.0
+adversarial_regularization: true
+batch_size: 8
+ckpt_freq: 10000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_augment_appearance: true
+data_augment_shape: false
+data_avoid_identity: false
+data_csv: data/cub_subset_dominik/birds/regress/train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+- foo
+- category
+data_csv_has_header: true
+data_flip_h: false
+data_flip_v: false
+data_root: data/cub_subset_dominik/birds/regress
+data_rotate: false
+dataset: src.data.data.AugmentedPair2
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+entropy_func: entropy
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+gamma: 10
+iterator: nips19.SB_model48i.model.Trainer
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 1000000
+lr_decay_end: 1000001
+model: nips19.SB_model48i.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 1000000
+patch_loss_weight:
+  options:
+    clip_max: 0.0001
+    clip_min: 0.0001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+patch_size: 32
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-05
+    clip_min: 1.0e-05
+    stair_factor: 10
+    start: 81000
+    start_value: 1.0
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+tps_parameters:
+  augm_scal: 1.0
+  off_scal: 0.2
+  rot_scal: 0.1
+  scal: 0.9
+  scal_var: 0.05
+  tps_scal: 0.15
+use_tps: true
+variance_weight:
+  options:
+    clip_max: 1
+    clip_min: 1
+    stair_factor: 2
+    start: 31000
+    start_value: 50
+    step_size: 30000
+  var_type: staircase
+variational_regularization: true
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 100.0
+    clip_min: 100.0
+    end: 80000
+    end_value: 1000.0
+    start: 60000
+    start_value: 1
+  var_type: linear
+z0_size: 256
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=None, checkpoint=None, eval=None, log_level='info', name=None, nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/', retrain=False, train='nips19/SB_model48i/train_cub_subset_tps.yaml')
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: Training config: nips19/SB_model48i/train_cub_subset_tps.yaml
+MI:
+  loa_adaptive: true
+  loa_init: 0.0
+  loa_lr: 4.0
+  lor_adaptive: true
+  lor_init: 0.0
+  lor_lr: 0.05
+  lor_max: 7.5
+  lor_min: -3.0
+  mi_slack: 0.05
+  mi_target: 1.0
+adversarial_regularization: true
+batch_size: 8
+ckpt_freq: 10000
+d_single:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+data_augment_appearance: true
+data_augment_shape: false
+data_avoid_identity: false
+data_csv: data/cub_subset_dominik/birds/regress/train.csv
+data_csv_columns:
+- character_id
+- relative_file_path_
+- foo
+- category
+data_csv_has_header: true
+data_flip_h: false
+data_flip_v: false
+data_root: data/cub_subset_dominik/birds/regress
+data_rotate: false
+dataset: src.data.data.AugmentedPair2
+discriminator:
+  activation: leaky_relu
+  coords: false
+dv:
+  activation: leaky_relu
+  config:
+  - 16
+  - 32
+  - 32
+  - 128
+  - 128
+  - 256
+  coords: true
+  upsample_config:
+  - linear
+  - linear
+  - linear
+  - linear
+  - linear
+encoder0:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: true
+  extra_resnets: 4
+encoder1:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  - 128
+  - 128
+  - 256
+  - 256
+  coords: false
+  extra_resnets: 4
+entropy_func: entropy
+final_hour:
+  activation: leaky_relu
+  config:
+  - 32
+  - 64
+  coords: false
+  extra_resnets: 0
+  upsample_method: linear
+gamma: 10
+iterator: nips19.SB_model48i.model.Trainer
+kl_weight:
+  end: 1
+  end_value: 1.0
+  start: 0
+  start_value: 1.0
+local_app_size: 64
+log_freq: 250
+lr: 0.0002
+lr_decay_begin: 1000000
+lr_decay_end: 1000001
+model: nips19.SB_model48i.model.TrainModel
+mumford_sha_alpha:
+  options:
+    clip_max: 0.01
+    clip_min: 0.01
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 10000
+  var_type: staircase
+mumford_sha_lambda:
+  options:
+    clip_max: 1.0
+    clip_min: 1.0
+    stair_factor: 10
+    start: 65000
+    start_value: 1.0
+    step_size: 5000
+  var_type: staircase
+n_parts: 25
+num_steps: 1000000
+patch_loss_weight:
+  options:
+    clip_max: 0.0001
+    clip_min: 0.0001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+patch_size: 32
+prior_gmrf_weight:
+  options:
+    clip_max: 0.001
+    clip_min: 0.001
+    stair_factor: 3.14
+    start: 100000
+    start_value: 0.01
+    step_size: 20000
+  var_type: staircase
+prior_mumford_sha_weight:
+  options:
+    clip_max: 1.0e-05
+    clip_min: 1.0e-05
+    stair_factor: 10
+    start: 81000
+    start_value: 1.0
+    step_size: 20000
+  var_type: staircase
+restore_exclude: []
+spatial_size: 128
+test_mode: false
+tps_parameters:
+  augm_scal: 1.0
+  off_scal: 0.2
+  rot_scal: 0.1
+  scal: 0.9
+  scal_var: 0.05
+  tps_scal: 0.15
+use_tps: true
+variance_weight:
+  options:
+    clip_max: 1
+    clip_min: 1
+    stair_factor: 2
+    start: 31000
+    start_value: 50
+    step_size: 30000
+  var_type: staircase
+variational_regularization: true
+weakly_superv_loss_weight_p:
+  options:
+    clip_max: 500.0
+    clip_min: 500.0
+    end: 80000
+    end_value: 1000.0
+    start: 60000
+    start_value: 1
+  var_type: linear
+z0_size: 256
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Namespace(base=['nips19/SB_model48i/train_cub_subset_tps.yaml'], checkpoint='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/train/checkpoints/model.ckpt-60000', eval=['nips19/SB_model48i/infer_cubs_subset.yaml'], log_level='info', name='infer', nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48i/infer_cubs_subset.yaml
+nips19/SB_model48i/infer_cubs_subset.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48i/train_cub_subset_tps.yaml'], checkpoint='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/train/checkpoints/model.ckpt-60000', eval=['nips19/SB_model48i/infer_cubs_subset.yaml'], log_level='info', name='infer', nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48i/infer_cubs_subset.yaml
+nips19/SB_model48i/infer_cubs_subset.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 191, in _test
+    next(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/batches.py", line 272, in __next__
+    return deep_lod2dol(super(Iterator, self).__next__())
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/chainer/iterators/multiprocess_iterator.py", line 148, in __next__
+    self.dataset_timeout)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/chainer/iterators/multiprocess_iterator.py", line 417, in measure
+    self.mem_size = max(map(_measure, batch))
+TypeError: 'NoneType' object is not iterable
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48i/train_cub_subset_tps.yaml'], checkpoint='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/train/checkpoints/model.ckpt-60000', eval=['nips19/SB_model48i/infer_cubs_subset.yaml'], log_level='info', name='infer', nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48i/infer_cubs_subset.yaml
+nips19/SB_model48i/infer_cubs_subset.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 19, in iterate
+    with self.session.as_default():
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 36, in session
+    self._session = tf.Session(config=sess_config)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1570, in __init__
+    super(Session, self).__init__(target, graph, config=config)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 693, in __init__
+    self._session = tf_session.TF_NewSessionRef(self._graph._c_graph, opts)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: device CUDA:1 not supported by XLA service
+	while setting up XLA_GPU_JIT device number 1
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48i/train_cub_subset_tps.yaml'], checkpoint='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/train/checkpoints/model.ckpt-60000', eval=['nips19/SB_model48i/infer_cubs_subset.yaml'], log_level='info', name='infer', nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48i/infer_cubs_subset.yaml
+nips19/SB_model48i/infer_cubs_subset.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1356, in _do_call
+    return fn(*args)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1341, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1429, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: You must feed a value for placeholder tensor 'input_view_2' with dtype float and shape [8,128,128,3]
+	 [[{{node input_view_2}}]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 160, in _iterate
+    results = self.run(fetches, feed_dict=feeds)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 14, in run
+    results = self.session.run(fetches, feed_dict=feed_dict)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 950, in run
+    run_metadata_ptr)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1173, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1350, in _do_run
+    run_metadata)
+  File "/export/home/sabraun/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1370, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: You must feed a value for placeholder tensor 'input_view_2' with dtype float and shape [8,128,128,3]
+	 [[node input_view_2 (defined at /code/nips19/nips19/SB_model48i/model.py:325) ]]
+
+Original stack trace for 'input_view_2':
+  File "/anaconda3/envs/nips19/bin/edflow", line 7, in <module>
+    exec(compile(f.read(), __file__, 'exec'))
+  File "/code/edflow/edflow/edflow", line 280, in <module>
+    main(opt, additional_kwargs)
+  File "/code/edflow/edflow/edflow", line 178, in main
+    p.start()
+  File "/anaconda3/envs/nips19/lib/python3.5/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/anaconda3/envs/nips19/lib/python3.5/multiprocessing/context.py", line 212, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/anaconda3/envs/nips19/lib/python3.5/multiprocessing/context.py", line 267, in _Popen
+    return Popen(process_obj)
+  File "/anaconda3/envs/nips19/lib/python3.5/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+  File "/anaconda3/envs/nips19/lib/python3.5/multiprocessing/popen_fork.py", line 74, in _launch
+    code = process_obj._bootstrap()
+  File "/anaconda3/envs/nips19/lib/python3.5/multiprocessing/process.py", line 252, in _bootstrap
+    self.run()
+  File "/anaconda3/envs/nips19/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/code/edflow/edflow/main.py", line 86, in test
+    traceable_process(_test, args, job_queue, idx)
+  File "/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/code/edflow/edflow/main.py", line 195, in _test
+    Model = implementations["model"](config)
+  File "/code/nips19/nips19/SB_model48i/model.py", line 257, in __init__
+    self.define_graph()
+  File "/code/nips19/nips19/SB_model48i/model.py", line 325, in define_graph
+    name="input_view_{}".format(view_idx),
+  File "/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py", line 2143, in placeholder
+    return gen_array_ops.placeholder(dtype=dtype, shape=shape, name=name)
+  File "/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/ops/gen_array_ops.py", line 6262, in placeholder
+    "Placeholder", dtype=dtype, shape=shape, name=name)
+  File "/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 788, in _apply_op_helper
+    op_def=op_def)
+  File "/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 507, in new_func
+    return func(*args, **kwargs)
+  File "/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 3616, in create_op
+    op_def=op_def)
+  File "/anaconda3/envs/nips19/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 2005, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48i/train_cub_subset_tps.yaml'], checkpoint='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/train/checkpoints/model.ckpt-60000', eval=['nips19/SB_model48i/infer_cubs_subset.yaml'], log_level='info', name='infer', nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48i/infer_cubs_subset.yaml
+nips19/SB_model48i/infer_cubs_subset.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48i/train_cub_subset_tps.yaml'], checkpoint='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/train/checkpoints/model.ckpt-60000', eval=['nips19/SB_model48i/infer_cubs_subset.yaml'], log_level='info', name='infer', nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48i/infer_cubs_subset.yaml
+nips19/SB_model48i/infer_cubs_subset.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 172, in _iterate
+    self.run_hooks(ep, before=False)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 242, in run_hooks
+    hook.after_epoch(index)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 176, in after_epoch
+    data["outputs"][figure01_options["inferred_segmentation_key"]] + 1
+NameError: name 'data' is not defined
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48i/train_cub_subset_tps.yaml'], checkpoint='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/train/checkpoints/model.ckpt-60000', eval=['nips19/SB_model48i/infer_cubs_subset.yaml'], log_level='info', name='infer', nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48i/infer_cubs_subset.yaml
+nips19/SB_model48i/infer_cubs_subset.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[WARNING] [main]: Exception in process 0:
+[WARNING] [main]: Traceback (most recent call last):
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 38, in traceable_process
+    fn(*args)
+  File "/export/home/sabraun/code/edflow/edflow/main.py", line 226, in _test
+    Evaluator.iterate(batches)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/tf_iterator.py", line 20, in iterate
+    super().iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 124, in iterate
+    raise e
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 121, in iterate
+    self._iterate(batch_iterator)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 158, in _iterate
+    self.run_hooks(bi, fetches, feeds, batch, before=True)
+  File "/export/home/sabraun/code/edflow/edflow/iterators/model_iterator.py", line 235, in run_hooks
+    hook.before_step(index, fetches, feeds, batch)
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 157, in before_step
+    new_data = {k: v for k, v in batch.items() if k in self.batch_store_keys}
+  File "/export/home/sabraun/code/nips19/nips19/eval/infer.py", line 157, in <dictcomp>
+    new_data = {k: v for k, v in batch.items() if k in self.batch_store_keys}
+TypeError: argument of type 'NoneType' is not iterable
+
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished
+[INFO] [main]: Namespace(base=['nips19/SB_model48i/train_cub_subset_tps.yaml'], checkpoint='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps/train/checkpoints/model.ckpt-60000', eval=['nips19/SB_model48i/infer_cubs_subset.yaml'], log_level='info', name='infer', nogpu=False, project='logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps', retrain=False, train=None)
+[INFO] [main]: Project structure:
+logs/2019-11-13T15-12-44_SB_model_48i_cubsubset_tps
+├╴code
+├╴train
+  ├╴checkpoints
+├╴eval
+├╴configs
+
+[INFO] [main]: eval_all was disabled because you specified a checkpoint.
+[INFO] [main]: eval_forever was disabled because you specified a checkpoint.
+[INFO] [main]: Evaluation config: nips19/SB_model48i/infer_cubs_subset.yaml
+nips19/SB_model48i/infer_cubs_subset.yaml
+...
+
+[INFO] [main]: Started 1 process(es).
+[INFO] [main]: Process 0 is done
+[INFO] [main]: Finished
+[INFO] [main]: Terminating all processes
+[INFO] [main]: Finished

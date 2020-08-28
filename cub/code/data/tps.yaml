@@ -1,0 +1,8 @@
+use_tps: False
+tps_parameters: # adapted from https://github.com/CompVis/unsupervised-disentangling
+  scal: 0.8
+  tps_scal: 0.15
+  rot_scal: 0.2
+  off_scal: 0.2
+  scal_var: 0.1
+  augm_scal: 1.0
