@@ -1,0 +1,13 @@
+dataset: eddata.stochastic_pair.StochasticPairsWithMask
+data_root: data/pennaction
+data_csv: data/pennaction/mrcnn_csv/mrcnn_cropped_baseball_pitch_train.csv
+# data_csv: data/pennaction/mrcnn_csv/mrcnn_cropped_train.csv
+
+data_avoid_identity: False
+data_flip_h: True
+data_flip_v: False
+data_rotate: False
+data_csv_columns : ["character_id", "relative_file_path_", "relative_mask_path_"]
+data_csv_has_header : False
+mask_label: -1.0
+invert_mask: True

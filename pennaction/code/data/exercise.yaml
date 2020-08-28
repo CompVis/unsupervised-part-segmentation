@@ -1,0 +1,5 @@
+dataset: eddata.stochastic_pair.StochasticPairs
+data_root: data/exercise_data/exercise_dataset
+data_csv: data/exercise_data/train_exercise.csv
+data_avoid_identity: False
+data_flip: True
