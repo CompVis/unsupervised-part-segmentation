@@ -3,10 +3,9 @@
 PyTorch code accompanying the [GCPR 2020]() paper
 
 [**Unsupervised Part Discovery by Unsupervised Disentanglement**](https://compvis.github.io/invariances/)<br/>
-[Sandro Braun](https://github.com/therealsupermario)\*,
-[Patrick Esser](https://github.com/pesser)\*,
+[Sandro Braun](https://github.com/therealsupermario),
+[Patrick Esser](https://github.com/pesser),
 [Björn Ommer](https://hci.iwr.uni-heidelberg.de/Staff/bommer)<br/>
-\* equal contribution
 
 ![teaser](assets/overview.png)<br/>
 [arXiv]() | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/partsegmentation/)
@@ -26,9 +25,15 @@ Table of Contents
 A suitable [conda](https://conda.io/) environment named `braun20parts` can be created
 and activated with:
 
-```
+```bash
 conda env create -f environment.yaml
 conda activate braun20parts
+```
+
+Clone the repo **with all it's submodules**
+
+```bash
+git clone --recursive -j8 <TODO: Link einfügen>
 ```
 
 
@@ -50,6 +55,9 @@ edflow -t xxx/<config.yaml>
 1. baseline models with pretrained checkpoints on all datasets can be found in folder `baselines`
 2. evaluation scripts and notebooks can be found in folder `evaluation`
 
+## Pretrained Models
+
+pretrained models can be found in the respective folder, under `train/checkpoints`
 
 ## BibTex
 
