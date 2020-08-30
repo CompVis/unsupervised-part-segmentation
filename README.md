@@ -7,7 +7,7 @@ PyTorch code accompanying the [GCPR 2020]() paper
 [Patrick Esser](https://github.com/pesser),
 [Björn Ommer](https://hci.iwr.uni-heidelberg.de/Staff/bommer)<br/>
 
-![teaser](assets/overview.png)<br/>
+![teaser](assets/teaser.png)<br/>
 [arXiv]() | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/partsegmentation/)
 
 Table of Contents
