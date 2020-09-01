@@ -1,0 +1,75 @@
+								<div class="image fit captioned align-just">
+                  <a href="images/results_df_ex_penn.png">
+									<img src="images/results_df_ex_penn.png" alt="" />
+                  </a>
+                  <h3>Segmentation on Human Object Class</h3>
+                  Our method allows to learn part segmentations without supervision with a pixel-accurate precision. 
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/results_cub.png">
+									<img src="images/results_cub.png" alt="" />
+                  </a>
+									<h3>Segmentation on Bird Object Class</h3>
+                  Our method is able to generalize to new object categories, such as birds.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/results_iou_df_ex_penn.png">
+									<img src="images/results_iou_df_ex_penn.png" alt="" />
+                  </a>
+									<h3>Segmentation IOU on Human Object Class</h3>
+                  We evaluate the segmentation accuracy on the human object class represented by the Deepfashion,
+                  Exercise and Pennaction dataset. 
+                  Our method outperforms existing methods on all datasets.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/results_iou_cub.png">
+									<img src="images/results_iou_cub.png" alt="" />
+                  </a>
+									<h3>Segmentation IOU on Bird Object Class</h3>
+                  We evaluate the segmentation accuracy on the bird object class represented by the CUB dataset.
+                  Our method outperforms all existing methods.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/transfers_final_0.png">
+									<img src="images/transfers_final_0.png" alt="" />
+                  </a>
+									<h3>Part-based Appearance Transfer: Swapping no Appearance</h3>
+                  Our method allows fine-grained part-based appearance transfer, which is mich more accurate than keypoint-based methods.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/transfers_final_1.png">
+									<img src="images/transfers_final_1.png" alt="" />
+                  </a>
+									<h3>Part-based Appearance Transfer: Swapping Chest Appearance</h3>
+                  Our method allows fine-grained part-based appearance transfer, which is mich more accurate than keypoint-based methods.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/transfers_final_2.png">
+									<img src="images/transfers_final_2.png" alt="" />
+                  </a>
+									<h3>Part-based Appearance Transfer: Swapping Chest and Arm Appearance</h3>
+                  Our method allows fine-grained part-based appearance transfer, which is mich more accurate than keypoint-based methods.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/transfers_final_3.png">
+									<img src="images/transfers_final_3.png" alt="" />
+                  </a>
+									<h3>Part-based Appearance Transfer: Swapping Chest, Arm, Hip and Leg Appearance</h3>
+                  Our method allows fine-grained part-based appearance transfer, which is mich more accurate than keypoint-based methods.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/shape_pck.png">
+									<img src="images/shape_pck.png" alt="" />
+                  </a>
+									<h3>Analysis of Shape Consistency</h3>
+                  We evaluate the shape-consistency of our method against those of supervised and keypoint-based methods
+                  by calculating the Percentage of Correct keypoints (PCK). Note that our method significantly increases shape consistency, in comparison to the state-of-the-art unsupervised method.
+								</div>

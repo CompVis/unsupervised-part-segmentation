@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+  Based on
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117339330-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-117339330-4');
+    </script>
+
+    <title>
+        Unsupervised Part Discovery by Unsupervised Disentanglement
+    </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="landing">
+
+		<!-- Banner -->
+			<section id="banner">
+        <h2>
+          Unsupervised Part Discovery by Unsupervised Disentanglement
+        </h2>
+        <p>
+        <a href="https://github.com/therealsupermario">Sandro Braun</a>, 
+        <a href="https://github.com/pesser">Patrick Esser</a>,
+        <a href="https://hci.iwr.uni-heidelberg.de/Staff/bommer">Bj&ouml;rn Ommer</a><br/>
+        <a href="https://www.iwr.uni-heidelberg.de/">IWR, Heidelberg University</a><br/>
+        <a href="">GCPR 2020</a></p>
+			</section>
+
+			<!-- One -->
+				<section id="one" class="wrapper style1">
+					<div class="container 75%">
+						<div class="row 200%">
+							<div class="6u 12u$(medium) vert-center" style="margin:1% 0">
+                  <div class="container 25%">
+
+                    <div class="image fit captioned align-left"
+                                style="margin-bottom:2em; box-shadow:0 0;
+                                text-align:justify">
+                      <img src="images/overview2.png" alt="" style="border:0px solid black"/>
+                      Our part segmentation method leverages a disentangled representation for shape and appearance
+                      to discover semantic part segmentations without supervision.
+                    </div>
+
+                    <div class="image fit captioned align-center"
+                                style="margin-bottom:0em; box-shadow:0 0">
+                      <a href="https://arxiv.org/pdf/2004.13166.pdf">
+                        <img src="images/paper.png" alt="" style="border:1px solid black"/>
+                      </a>
+                      <a href="https://arxiv.org/abs/2004.13166">arXiv</a>
+                      <div class="headerDivider"></div>
+                      <a href="images/partSegmentation.bib">BibTeX</a>
+                      <div class="headerDivider"></div>
+                      <a href="https://github.com/CompVis/partSegmentation">GitHub</a>
+                      <br/>
+                    </div>
+
+                  </div>
+							</div>
+							<div class="6u$ 12u$(medium)">
+                <h1>Abstract</h1>
+                <p style="text-align: justify">
+We address the problem of discovering part segmentations of articulated objects without supervision.
+In contrast to keypoints, part segmentations provide information about part localizations on the level of individual pixels.
+Capturing both locations and semantics, they are an attractive target for supervised learning approaches.
+However, large annotation costs limit the scalability of supervised algorithms to other object categories than humans.
+Unsupervised approaches potentially allow to use much more data at a lower cost.
+Most existing unsupervised approaches focus on learning abstract representations to be refined with supervision into the final representation.
+Our approach leverages a generative model consisting of two disentangled representations for an object's shape and appearance and a latent variable for the part segmentation.
+From a single image, the trained model infers a semantic part segmentation map.
+In experiments, we compare our approach to previous state-of-the-art approaches and observe significant gains in segmentation accuracy and shape consistency.
+Our work demonstrates the feasibility to discover semantic part segmentations without supervision.
+                </p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Two -->
+				<section id="two" class="wrapper style2 special">
+					<div class="container">
+						<header class="major">
+							<h2>Results</h2>
+							<p>and applications of our model.</p>
+						</header>
+
+            __TEMPLATE_STRING__
+
+				  </div>
+				</section>
+
+
+			<!-- Four -->
+				<section id="four" class="wrapper style3 special">
+					<div class="container">
+						<header class="major">
+							<h2>Acknowledgement</h2>
+              <p>
+This work has been supported in part by the BW Stiftung project "MULT!nano", the German Research Foundation (DFG) project 421703927, and the German federal ministry BMWi within the project "KI Absicherung".
+              This page is based on a design by <a href="http://templated.co">TEMPLATED</a>.
+              </p>
+						</header>
+					</div>
+				</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
