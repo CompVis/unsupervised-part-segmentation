@@ -8,7 +8,7 @@ PyTorch code accompanying the [GCPR 2020]() paper
 [Björn Ommer](https://hci.iwr.uni-heidelberg.de/Staff/bommer)<br/>
 
 ![teaser](assets/teaser.png)<br/>
-[arXiv]() | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/partsegmentation/)
+[arXiv]() | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/unsupervised-part-segmentation/)
 
 Table of Contents
 =================
@@ -69,8 +69,3 @@ pretrained models can be found in the respective folder, under `train/checkpoint
   year={2020}
 }
 ```
-
-## TODOs:
-
-- [ ] add Arxiv linkg
-
