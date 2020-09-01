@@ -2,7 +2,7 @@
 
 PyTorch code accompanying the [GCPR 2020]() paper
 
-[**Unsupervised Part Discovery by Unsupervised Disentanglement**](https://compvis.github.io/invariances/)<br/>
+[**Unsupervised Part Discovery by Unsupervised Disentanglement**](https://compvis.github.io/unsupervised-part-segmentation/)<br/>
 [Sandro Braun](https://github.com/therealsupermario),
 [Patrick Esser](https://github.com/pesser),
 [Björn Ommer](https://hci.iwr.uni-heidelberg.de/Staff/bommer)<br/>
