@@ -33,7 +33,7 @@ conda activate braun20parts
 Clone the repo **with all it's submodules**
 
 ```bash
-git clone --recursive -j8 <TODO: Link einfügen>
+git clone --recursive -j8 git@github.com:CompVis/unsupervised-part-segmentation.git
 ```
 
 
