@@ -2,13 +2,13 @@
 
 Code accompanying the [GCPR 2020]() paper
 
-[**Unsupervised Part Discovery by Unsupervised Disentanglement**](https://compvis.github.io/unsupervised-part-segmentation/)<br/>
+[**Unsupervised Part Discovery by Unsupervised Disentanglement**](https://compvis.github.io/unsupervised-part-segmentation/index.html)<br/>
 [Sandro Braun](https://github.com/therealsupermario),
 [Patrick Esser](https://github.com/pesser),
 [Björn Ommer](https://hci.iwr.uni-heidelberg.de/Staff/bommer)<br/>
 
 ![teaser](assets/teaser.png)<br/>
-[arXiv]() | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/unsupervised-part-segmentation/)
+[arXiv]() | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/unsupervised-part-segmentation/index.html)
 
 Table of Contents
 =================
