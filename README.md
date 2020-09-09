@@ -1,6 +1,6 @@
 # Unsupervised Part Discovery by Unsupervised Disentanglement
 
-PyTorch code accompanying the [GCPR 2020]() paper
+Code accompanying the [GCPR 2020]() paper
 
 [**Unsupervised Part Discovery by Unsupervised Disentanglement**](https://compvis.github.io/unsupervised-part-segmentation/)<br/>
 [Sandro Braun](https://github.com/therealsupermario),
