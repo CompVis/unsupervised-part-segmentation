@@ -8,7 +8,7 @@ Code accompanying the [GCPR 2020]() paper
 [Björn Ommer](https://hci.iwr.uni-heidelberg.de/Staff/bommer)<br/>
 
 ![teaser](assets/teaser.png)<br/>
-[arXiv]() | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/unsupervised-part-segmentation/index.html)
+[arXiv](https://arxiv.org/abs/2009.04264) | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/unsupervised-part-segmentation/index.html)
 
 Table of Contents
 =================
