@@ -59,7 +59,7 @@
                       <a href="">
                         <img src="images/paper.png" alt="" style="border:1px solid black"/>
                       </a>
-                      <a href="">arXiv</a>
+                      <a href="https://arxiv.org/abs/2009.04264">arXiv</a>
                       <div class="headerDivider"></div>
                       <a href="images/partSegmentation.bib">BibTeX</a>
                       <div class="headerDivider"></div>
