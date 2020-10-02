@@ -1,4 +1,20 @@
 								<div class="image fit captioned align-just">
+                  <a href="https://www.youtube.com/watch?v=PUv0Fv8iKFY">
+									<img src="images/talk.png" alt="" />
+                  </a>
+                  <h3>Oral Talk at GCPR 2020</h3>
+				  Click on to get to the YouTube recording.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="https://github.com/CompVis/unsupervised-part-segmentation/blob/gh-pages/images/2020_gcpr_oral.pdf">
+									<img src="images/oral_slides.png" alt="" />
+                  </a>
+                  <h3>Oral Slides</h3>
+				  Click on image to see the oral slide deck from GCPR 2020.
+								</div>
+==========
+								<div class="image fit captioned align-just">
                   <a href="images/results_df_ex_penn.png">
 									<img src="images/results_df_ex_penn.png" alt="" />
                   </a>
